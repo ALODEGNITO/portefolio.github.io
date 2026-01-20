@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Accueil</title>
+
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="accueil.css">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">ALODEGNITO <span>TOLES TANGUY</span></div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+					<li><a href="#apropos">À propos</a></li>
+					<li><a href="#projets">Projets</a></li>
+					<li><a href="#competences">Compétences</a></li>
+					<li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== SECTION HERO ===== -->
+    <section class="hero" id="accueil">
+        <div class="container hero-container">
+            
+            <!-- Texte -->
+            <div class="hero-text">
+                <h1>Je suis <span>TOLES TANGUY</span>,<br>Développeur en devenir<br>passionné par le web et le design !</h1>
+                <a href="projets.html" class="btn">Voir mes projets</a>
+            </div>
+
+            <!-- Image -->
+            <div class="hero-image">
+                <img src="illustration.webp" alt="Illustration développeur">
+            </div>
+
+        </div>
+    </section>
+	<!-- ===== SECTION A PROPOS ===== -->
+	<section class="about" id="apropos">
+		<div class="container about-container">
+
+			<div class="about-text">
+				<h2>À propos</h2>
+
+				<p>
+					Je m'appelle <span>TOLES TANGUY</span>, passionné par la création
+					de sites web modernes et interactifs.
+				</p>
+
+				<p>
+					Je suis actuellement étudiant en <strong>développement web</strong>
+					et je cherche à améliorer mes compétences en JavaScript, HTML et CSS.
+				</p>
+
+				<p>
+					J’adore transformer mes idées en projets concrets et expérimenter
+					avec les nouvelles technologies.
+				</p>
+
+				<a href="cv.pdf" class="btn">Télécharger mon CV</a>
+			</div>
+
+			<div class="about-image">
+				<img src="profil.png" alt="Photo de profil">
+			</div>
+
+		</div>
+	</section>
+	<!-- ===== SECTION PROJETS ===== -->
+	<section class="projects" id="projets">
+		<div class="container">
+			<h2>Mes Projets</h2>
+
+			<div class="projects-container">
+
+				<div class="project-card">
+					<h3>Mini-jeu JavaScript</h3>
+					<p>Un mini-jeu interactif utilisant les événements DOM.</p>
+					<span>#html #css #js</span>
+					<a href="#projets" class="btn">Voir mes projets</a>
+				</div>
+
+				<div class="project-card">
+					<h3>Mini-jeu JavaScript</h3>
+					<p>Un mini-jeu interactif utilisant les événements DOM.</p>
+					<span>#html #css #js</span>
+					<a href="#projets" class="btn">Voir mes projets</a>
+				</div>
+
+				<div class="project-card">
+					<h3>Mini-jeu JavaScript</h3>
+					<p>Un mini-jeu interactif utilisant les événements DOM.</p>
+					<span>#html #css #js</span>
+					<a href="#projets" class="btn">Voir mes projets</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- ===== SECTION COMPETENCES ===== -->
+	<section class="skills" id="competences">
+		<div class="container">
+			<h2>Mes Compétences</h2>
+
+			<div class="skills-container">
+
+				<!-- SOFT SKILLS -->
+				<div class="skills-box">
+					<h3>Soft Skills</h3>
+
+					<p>Gestion de projet</p>
+					<div class="bar">
+						<span data-width="75%"></span>
+					</div>
+
+					<p>Résolution de problème</p>
+					<div class="bar">
+						<span data-width="60%"></span>
+					</div>
+
+					<p>Adaptabilité</p>
+					<div class="bar">
+						<span data-width="85%"></span>
+					</div>
+				</div>
+
+				<!-- HARD SKILLS -->
+				<div class="skills-box">
+					<h3>Hard Skills</h3>
+
+					<p>HTML</p>
+					<div class="bar">
+						<span data-width="90%"></span>
+					</div>
+
+					<p>CSS</p>
+					<div class="bar">
+						<span data-width="65%"></span>
+					</div>
+
+					<p>JavaScript</p>
+					<div class="bar">
+						<span data-width="80%"></span>
+					</div>
+
+					<p>VS Code</p>
+					<div class="bar">
+						<span data-width="95%"></span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== SECTION CONTACT ===== -->
+	<section class="contact" id="contact">
+		<div class="container contact-container">
+
+			<h2>
+				Vous avez un <span>projet en tête</span> ?<br>
+				N'hésitez pas à me <span>contacter</span>
+			</h2>
+
+			<form class="contact-form">
+
+				<div class="form-row">
+					<div class="form-group">
+						<label>Votre prénom</label>
+						<input type="text" placeholder="Tanguy" required>
+					</div>
+
+					<div class="form-group">
+						<label>Votre nom</label>
+						<input type="text" placeholder="ALODEGNITO" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Votre sujet</label>
+					<input type="text" placeholder="Développement d’un site vitrine" required>
+				</div>
+
+				<div class="form-group">
+					<textarea placeholder="Écrivez votre message ici..." required></textarea>
+				</div>
+
+				<button type="submit" class="btn">Envoyer</button>
+
+			</form>
+
+		</div>
+	</section>
+
+    <!-- Fichier JavaScript -->
+    <script src="accueil.js"></script>
+</body>
+	<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-container">
+        <p>Designed by <span>Tolès Tanguy</span> with HTML CSS JS</p>
+        <p>Tous droits réservés - 2025</p>
+    </div>
+</footer>
+
+</html>
