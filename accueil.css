@@ -328,6 +328,30 @@ window.addEventListener('DOMContentLoaded', () => {
     transition: width 1.5s ease-in-out;
 }
 
+
+
+
+.skills-box p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.skills-box .percent {
+    color: var(--primary);
+}
+
+/* Animation fluide */
+.bar span {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #18d1c2, #0bb3a6);
+    border-radius: 20px;
+    transition: width 1.5s ease;
+}
+            
+
 /* ================== RESPONSIVE AJUSTEMENTS ================== */
 @media (max-width: 900px) {
     .about-container {
@@ -424,3 +448,4 @@ window.addEventListener('DOMContentLoaded', () => {
         gap: 8px;
     }
 }
+
