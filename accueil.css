@@ -311,7 +311,26 @@ window.addEventListener('DOMContentLoaded', () => {
     color: var(--primary);
 }
 
-.skills-box p {
+.bar {
+    width: 100%;
+    height: 10px;
+    background-color: #dcdcdc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bar span {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #18d1c2, #0bb3a6);
+    border-radius: 6px;
+    transition: width 1.5s ease-in-out;
+}
+
+
+
+ .skills-box p {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
@@ -330,7 +349,7 @@ window.addEventListener('DOMContentLoaded', () => {
     border-radius: 20px;
     transition: width 1.5s ease;
 }
-
+           
 
 /* ================== RESPONSIVE AJUSTEMENTS ================== */
 @media (max-width: 900px) {
@@ -428,4 +447,3 @@ window.addEventListener('DOMContentLoaded', () => {
         gap: 8px;
     }
 }
-
