@@ -320,13 +320,6 @@ window.addEventListener('DOMContentLoaded', () => {
     overflow: hidden;
 }
 
-.bar span {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #18d1c2, #0bb3a6);
-    border-radius: 6px;
-    transition: width 1.5s ease-in-out;
-}
 
 
 
@@ -448,4 +441,5 @@ window.addEventListener('DOMContentLoaded', () => {
         gap: 8px;
     }
 }
+
 
