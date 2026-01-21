@@ -28,40 +28,34 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ================= SKILLS ANIMATION ================= */
-	document.addEventListener("DOMContentLoaded", () => {
+	
 
-    const skillsSection = document.querySelector(".skills");
-    const bars = document.querySelectorAll(".bar span");
 
-    if (!skillsSection || bars.length === 0) return;
 
-    // Sécurité : remettre à 0
-    bars.forEach(bar => bar.style.width = "0");
+/* ================= MENU ACTIF AU SCROLL ================= */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-list a");
 
-    let animated = false;
+window.addEventListener("scroll", () => {
+    let current = "";
 
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !animated) {
-                    animated = true;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
 
-                    bars.forEach((bar, index) => {
-                        const value = bar.dataset.width;
-                        setTimeout(() => {
-                            bar.style.width = value;
-                        }, index * 300);
-                    });
-
-                    observer.disconnect(); // stop proprement
-                }
-            });
-        },
-        {
-            threshold: 0.4
+        if (pageYOffset >= sectionTop &&
+            pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
         }
-    );
+    });
 
-    observer.observe(skillsSection);
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
 });
+	
+
 
