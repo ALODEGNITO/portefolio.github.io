@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', () => {
 .settings-btn {
     position: fixed;
     left: 20px;
-    bottom: 80px;
+    bottom: 100px;
     background: #18d1c2;
     color: #fff;
     width: 45px;
@@ -601,6 +601,7 @@ body.dark h3 {
 
 			
 			
+
 
 
 
