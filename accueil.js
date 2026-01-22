@@ -111,51 +111,52 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     /* ================= SETTINGS PANEL ================= */
-const settingsBtn = document.getElementById("settingsBtn");
-const settingsPanel = document.getElementById("settingsPanel");
-
-// Ouvrir / fermer
-settingsBtn.addEventListener("click", () => {
-    settingsPanel.classList.toggle("active");
-});
-
-// Changer couleur principale
-document.querySelectorAll(".colors span").forEach(color => {
-    color.addEventListener("click", () => {
-        const value = color.getAttribute("data-color");
-        document.documentElement.style.setProperty("--primary", value);
-        localStorage.setItem("themeColor", value);
+    const settingsBtn = document.getElementById("settingsBtn");
+    const settingsPanel = document.getElementById("settingsPanel");
+    
+    // Ouvrir / fermer
+    settingsBtn.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
     });
-});
-
-// Charger couleur sauvegardée
-const savedColor = localStorage.getItem("themeColor");
-if (savedColor) {
-    document.documentElement.style.setProperty("--primary", savedColor);
-}
-
-/* ================= LANGUAGE SWITCH ================= */
-const languageSelect = document.getElementById("languageSelect");
-
-languageSelect.addEventListener("change", () => {
-    const lang = languageSelect.value;
-    document.querySelectorAll("[data-fr]").forEach(el => {
-        el.textContent = el.dataset[lang];
+    
+    // Changer couleur principale
+    document.querySelectorAll(".colors span").forEach(color => {
+        color.addEventListener("click", () => {
+            const value = color.getAttribute("data-color");
+            document.documentElement.style.setProperty("--primary", value);
+            localStorage.setItem("themeColor", value);
+        });
     });
-    localStorage.setItem("lang", lang);
-});
-
-// Charger langue sauvegardée
-const savedLang = localStorage.getItem("lang");
-if (savedLang) {
-    languageSelect.value = savedLang;
-    document.querySelectorAll("[data-fr]").forEach(el => {
-        el.textContent = el.dataset[savedLang];
+    
+    // Charger couleur sauvegardée
+    const savedColor = localStorage.getItem("themeColor");
+    if (savedColor) {
+        document.documentElement.style.setProperty("--primary", savedColor);
+    }
+    
+    /* ================= LANGUAGE SWITCH ================= */
+    const languageSelect = document.getElementById("languageSelect");
+    
+    languageSelect.addEventListener("change", () => {
+        const lang = languageSelect.value;
+        document.querySelectorAll("[data-fr]").forEach(el => {
+            el.textContent = el.dataset[lang];
+        });
+        localStorage.setItem("lang", lang);
     });
-}
-
+    
+    // Charger langue sauvegardée
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang) {
+        languageSelect.value = savedLang;
+        document.querySelectorAll("[data-fr]").forEach(el => {
+            el.textContent = el.dataset[savedLang];
+        });
+    }
+    
 
 
 });
+
 
 
