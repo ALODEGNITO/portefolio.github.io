@@ -84,79 +84,64 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ================= MODAL PROJETS ================= */
-    const modal = document.getElementById("projectModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalLink = document.getElementById("modalLink");
-    const closeModal = document.querySelector(".close-modal");
+  
+   // ================= SETTINGS PANEL =================
+    document.addEventListener("DOMContentLoaded", () => {
     
-    document.querySelectorAll(".project-card").forEach(card => {
-        card.addEventListener("click", () => {
-            modalTitle.textContent = card.querySelector("h3").textContent;
-            modalDescription.textContent = card.querySelector("p").textContent;
-            modalLink.href = card.querySelector("a").href;
+        const settingsBtn = document.getElementById("settingsBtn");
+        const settingsPanel = document.getElementById("settingsPanel");
     
-            modal.classList.add("show");
+        if (!settingsBtn || !settingsPanel) {
+            console.error("Settings panel elements not found");
+            return;
+        }
+    
+        // Ouvrir / fermer le panneau
+        settingsBtn.addEventListener("click", () => {
+            settingsPanel.classList.toggle("active");
         });
-    });
     
-    closeModal.addEventListener("click", () => {
-        modal.classList.remove("show");
-    });
-    
-    modal.addEventListener("click", e => {
-        if (e.target === modal) modal.classList.remove("show");
-    });
-
-
-    /* ================= SETTINGS PANEL ================= */
-    const settingsBtn = document.getElementById("settingsBtn");
-    const settingsPanel = document.getElementById("settingsPanel");
-    
-    // Ouvrir / fermer
-    settingsBtn.addEventListener("click", () => {
-        settingsPanel.classList.toggle("active");
-    });
-    
-    // Changer couleur principale
-    document.querySelectorAll(".colors span").forEach(color => {
-        color.addEventListener("click", () => {
-            const value = color.getAttribute("data-color");
-            document.documentElement.style.setProperty("--primary", value);
-            localStorage.setItem("themeColor", value);
+        // Changement de couleur
+        document.querySelectorAll(".colors span").forEach(color => {
+            color.addEventListener("click", () => {
+                const value = color.dataset.color;
+                document.documentElement.style.setProperty("--primary", value);
+                localStorage.setItem("themeColor", value);
+            });
         });
+    
+        // Charger la couleur sauvegardée
+        const savedColor = localStorage.getItem("themeColor");
+        if (savedColor) {
+            document.documentElement.style.setProperty("--primary", savedColor);
+        }
+    
+        // Langue
+        const languageSelect = document.getElementById("languageSelect");
+    
+        if (languageSelect) {
+            languageSelect.addEventListener("change", () => {
+                const lang = languageSelect.value;
+                document.querySelectorAll("[data-fr]").forEach(el => {
+                    el.textContent = el.dataset[lang];
+                });
+                localStorage.setItem("lang", lang);
+            });
+    
+            // Charger langue sauvegardée
+            const savedLang = localStorage.getItem("lang");
+            if (savedLang) {
+                languageSelect.value = savedLang;
+                document.querySelectorAll("[data-fr]").forEach(el => {
+                    el.textContent = el.dataset[savedLang];
+                });
+            }
+        }
+    
     });
-    
-    // Charger couleur sauvegardée
-    const savedColor = localStorage.getItem("themeColor");
-    if (savedColor) {
-        document.documentElement.style.setProperty("--primary", savedColor);
-    }
-    
-    /* ================= LANGUAGE SWITCH ================= */
-    const languageSelect = document.getElementById("languageSelect");
-    
-    languageSelect.addEventListener("change", () => {
-        const lang = languageSelect.value;
-        document.querySelectorAll("[data-fr]").forEach(el => {
-            el.textContent = el.dataset[lang];
-        });
-        localStorage.setItem("lang", lang);
-    });
-    
-    // Charger langue sauvegardée
-    const savedLang = localStorage.getItem("lang");
-    if (savedLang) {
-        languageSelect.value = savedLang;
-        document.querySelectorAll("[data-fr]").forEach(el => {
-            el.textContent = el.dataset[savedLang];
-        });
-    }
-    
-
 
 });
+
 
 
 
