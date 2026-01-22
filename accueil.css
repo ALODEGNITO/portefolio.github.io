@@ -290,6 +290,29 @@ window.addEventListener('DOMContentLoaded', () => {
     font-size: 14px;
 }
 
+.project-badge {
+		    position: absolute;
+		    top: 12px;
+		    left: 12px;
+		    padding: 6px 12px;
+		    font-size: 12px;
+		    font-weight: bold;
+		    color: #fff;
+		    border-radius: 20px;
+}
+		
+.project-badge.online {
+		    background-color: #18d1c2;
+}
+		
+.project-badge.progress {
+		    background-color: #f39c12;
+}
+		
+/* positionnement */
+.project-image {
+		    position: relative;
+}
 
 /* ===== PROJECT IMAGE ===== */
 .project-image {
@@ -467,6 +490,7 @@ window.addEventListener('DOMContentLoaded', () => {
         gap: 8px;
     }
 }
+
 
 
 
