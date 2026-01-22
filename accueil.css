@@ -491,7 +491,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 }
 
-/* ================= SETTINGS PANEL ================= */
+/* ================= SETTINGS PANEL ================= 
 .settings-btn {
     position: fixed;
     left: 20px;
@@ -545,7 +545,7 @@ window.addEventListener('DOMContentLoaded', () => {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-}
+} */
 
 
 
@@ -576,6 +576,7 @@ window.addEventListener('DOMContentLoaded', () => {
     right: 20px;
 }
 			
+
 
 
 
