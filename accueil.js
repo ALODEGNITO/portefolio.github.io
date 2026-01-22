@@ -107,4 +107,33 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+        /* ================= DARK MODE ================= */
+    const darkBtn = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    // Charger l'état sauvegardé
+    const darkModeSaved = localStorage.getItem("darkMode");
+
+    if (darkModeSaved === "enabled") {
+        body.classList.add("dark");
+        if (darkBtn) darkBtn.textContent = "☀️ Mode clair";
+    }
+
+    if (darkBtn) {
+        darkBtn.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                localStorage.setItem("darkMode", "enabled");
+                darkBtn.textContent = "☀️ Mode clair";
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+                darkBtn.textContent = "🌙 Mode sombre";
+            }
+        });
+    }
+
+
 });
+
