@@ -30,6 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const bars = document.querySelectorAll(".bar span");
 
     if (skillsSection && bars.length > 0) {
+
+        // Initialisation : barres vides
         bars.forEach(bar => bar.style.width = "0");
 
         let animated = false;
@@ -40,14 +42,17 @@ window.addEventListener('DOMContentLoaded', () => {
                     animated = true;
 
                     bars.forEach((bar, index) => {
-                        const value = bar.dataset.width;
+                        const width = bar.getAttribute("data-width");
+
                         setTimeout(() => {
-                            bar.style.width = value;
-                        }, index * 300);
+                            bar.style.width = width;
+                        }, index * 200);
                     });
                 }
             });
-        }, { threshold: 0.4 });
+        }, {
+            threshold: 0.4
+        });
 
         observer.observe(skillsSection);
     }
@@ -63,8 +68,10 @@ window.addEventListener('DOMContentLoaded', () => {
             const sectionTop = section.offsetTop - 120;
             const sectionHeight = section.offsetHeight;
 
-            if (window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight) {
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
                 current = section.getAttribute("id");
             }
         });
