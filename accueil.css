@@ -13,6 +13,7 @@ html {
 body {
     background-color: #ffffff;
     color: #111;
+    padding-top: 90px; /* hauteur approximative du header */;
 }
 
 /* ===== VARIABLES ===== */
@@ -34,7 +35,13 @@ body {
 .header {
     background-color: var(--dark);
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
+
 
 .header-container {
     display: flex;
@@ -426,6 +433,7 @@ window.addEventListener('DOMContentLoaded', () => {
         gap: 8px;
     }
 }
+
 
 
 
