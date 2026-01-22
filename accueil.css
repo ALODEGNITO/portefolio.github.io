@@ -547,7 +547,61 @@ window.addEventListener('DOMContentLoaded', () => {
     cursor: pointer;
 } 
 
-	
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+}
+
+/* Sections */
+body.dark .about,
+body.dark .skills,
+body.dark .projects,
+body.dark .footer {
+    background-color: #121212;
+}
+
+/* Cards */
+body.dark .project-card,
+body.dark .skills-box {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+}
+
+/* Header */
+body.dark .header {
+    background-color: #000;
+}
+
+/* Texte */
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #f1f1f1;
+}
+
+/* Bouton dark mode */
+.dark-btn {
+    width: 100%;
+    padding: 10px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.dark-btn:hover {
+    background: #222;
+}
+
+			
+			
+
 
 
 
