@@ -1,27 +1,28 @@
 // ===== PORTFOLIO - PAGE ACCUEIL =====
-window.addEventListener('DOMContentLoaded', () => {
+
+window.addEventListener("DOMContentLoaded", () => {
 
     /* ================= HERO ANIMATION ================= */
-    const heroText = document.querySelector('.hero-text');
-    const heroImage = document.querySelector('.hero-image');
+    const heroText = document.querySelector(".hero-text");
+    const heroImage = document.querySelector(".hero-image");
 
     if (heroText && heroImage) {
-        heroText.style.opacity = '0';
-        heroImage.style.opacity = '0';
+        heroText.style.opacity = "0";
+        heroImage.style.opacity = "0";
 
-        heroText.style.transform = 'translateY(20px)';
-        heroImage.style.transform = 'translateY(20px)';
+        heroText.style.transform = "translateY(20px)";
+        heroImage.style.transform = "translateY(20px)";
 
         setTimeout(() => {
-            heroText.style.transition = 'all 0.8s ease';
-            heroText.style.opacity = '1';
-            heroText.style.transform = 'translateY(0)';
+            heroText.style.transition = "all 0.8s ease";
+            heroText.style.opacity = "1";
+            heroText.style.transform = "translateY(0)";
         }, 200);
 
         setTimeout(() => {
-            heroImage.style.transition = 'all 0.8s ease';
-            heroImage.style.opacity = '1';
-            heroImage.style.transform = 'translateY(0)';
+            heroImage.style.transition = "all 0.8s ease";
+            heroImage.style.opacity = "1";
+            heroImage.style.transform = "translateY(0)";
         }, 500);
     }
 
@@ -31,9 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (skillsSection && bars.length > 0) {
 
-        // Initialisation : barres vides
         bars.forEach(bar => bar.style.width = "0");
-
         let animated = false;
 
         const observer = new IntersectionObserver(entries => {
@@ -43,16 +42,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     bars.forEach((bar, index) => {
                         const width = bar.getAttribute("data-width");
-
                         setTimeout(() => {
                             bar.style.width = width;
                         }, index * 200);
                     });
                 }
             });
-        }, {
-            threshold: 0.4
-        });
+        }, { threshold: 0.4 });
 
         observer.observe(skillsSection);
     }
@@ -84,23 +80,17 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
-   // ================= SETTINGS PANEL =================
-    document.addEventListener("DOMContentLoaded", () => {
-    
-        const settingsBtn = document.getElementById("settingsBtn");
-        const settingsPanel = document.getElementById("settingsPanel");
-    
-        if (!settingsBtn || !settingsPanel) {
-            console.error("Settings panel elements not found");
-            return;
-        }
-    
+    /* ================= SETTINGS PANEL ================= */
+    const settingsBtn = document.getElementById("settingsBtn");
+    const settingsPanel = document.getElementById("settingsPanel");
+
+    if (settingsBtn && settingsPanel) {
+
         // Ouvrir / fermer le panneau
         settingsBtn.addEventListener("click", () => {
             settingsPanel.classList.toggle("active");
         });
-    
+
         // Changement de couleur
         document.querySelectorAll(".colors span").forEach(color => {
             color.addEventListener("click", () => {
@@ -109,39 +99,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem("themeColor", value);
             });
         });
-    
+
         // Charger la couleur sauvegardée
         const savedColor = localStorage.getItem("themeColor");
         if (savedColor) {
             document.documentElement.style.setProperty("--primary", savedColor);
         }
-    
-        // Langue
-        const languageSelect = document.getElementById("languageSelect");
-    
-        if (languageSelect) {
-            languageSelect.addEventListener("change", () => {
-                const lang = languageSelect.value;
-                document.querySelectorAll("[data-fr]").forEach(el => {
-                    el.textContent = el.dataset[lang];
-                });
-                localStorage.setItem("lang", lang);
-            });
-    
-            // Charger langue sauvegardée
-            const savedLang = localStorage.getItem("lang");
-            if (savedLang) {
-                languageSelect.value = savedLang;
-                document.querySelectorAll("[data-fr]").forEach(el => {
-                    el.textContent = el.dataset[savedLang];
-                });
-            }
-        }
-    
-    });
+    }
 
 });
-
-
-
-
