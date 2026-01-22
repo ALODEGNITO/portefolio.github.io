@@ -491,6 +491,62 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 }
 
+/* ================= SETTINGS PANEL ================= */
+.settings-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    background: #22c55e;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 2000;
+}
+
+.settings-panel {
+    position: fixed;
+    left: 20px;
+    bottom: 90px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 220px;
+    display: none;
+    z-index: 2000;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.setting-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.colors span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 
 
 
