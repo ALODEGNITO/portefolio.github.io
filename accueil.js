@@ -1,6 +1,4 @@
 // ===== PORTFOLIO - PAGE ACCUEIL =====
-alert("JS chargé");
-
 window.addEventListener('DOMContentLoaded', () => {
 
     /* ================= HERO ANIMATION ================= */
@@ -28,34 +26,55 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ================= SKILLS ANIMATION ================= */
-	
+    const skillsSection = document.querySelector(".skills");
+    const bars = document.querySelectorAll(".bar span");
 
+    if (skillsSection && bars.length > 0) {
+        bars.forEach(bar => bar.style.width = "0");
 
+        let animated = false;
 
-/* ================= MENU ACTIF AU SCROLL ================= */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-list a");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
 
-window.addEventListener("scroll", () => {
-    let current = "";
+                    bars.forEach((bar, index) => {
+                        const value = bar.dataset.width;
+                        setTimeout(() => {
+                            bar.style.width = value;
+                        }, index * 300);
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        observer.observe(skillsSection);
+    }
 
-        if (pageYOffset >= sectionTop &&
-            pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute("id");
-        }
+    /* ================= MENU ACTIF AU SCROLL ================= */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-list a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active");
+            }
+        });
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-        }
-    });
 });
-	
-
-
