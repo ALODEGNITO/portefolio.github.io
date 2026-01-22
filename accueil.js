@@ -84,4 +84,31 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ================= MODAL PROJETS ================= */
+    const modal = document.getElementById("projectModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalLink = document.getElementById("modalLink");
+    const closeModal = document.querySelector(".close-modal");
+    
+    document.querySelectorAll(".project-card").forEach(card => {
+        card.addEventListener("click", () => {
+            modalTitle.textContent = card.querySelector("h3").textContent;
+            modalDescription.textContent = card.querySelector("p").textContent;
+            modalLink.href = card.querySelector("a").href;
+    
+            modal.classList.add("show");
+        });
+    });
+    
+    closeModal.addEventListener("click", () => {
+        modal.classList.remove("show");
+    });
+    
+    modal.addEventListener("click", e => {
+        if (e.target === modal) modal.classList.remove("show");
+    });
+
+
 });
+
