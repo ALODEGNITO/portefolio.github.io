@@ -492,11 +492,28 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 /* ================= SETTINGS PANEL =================*/ 
-.settings-btn {
+/*.settings-btn {
     position: fixed;
     left: 20px;
-    /*bottom: 100px;*/ 
-	top: 30px;
+    bottom: 100px;
+    background: #18d1c2;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 2000;
+}*/ 
+			
+.settings-btn {
+    position: fixed;
+    left: 20px;           /* distance depuis la gauche */
+    top: 50%;             /* milieu vertical */
+    transform: translateY(-50%); /* ajuste pour que le centre du bouton soit exactement au milieu */
     background: #18d1c2;
     color: #fff;
     width: 45px;
@@ -510,6 +527,7 @@ window.addEventListener('DOMContentLoaded', () => {
     z-index: 2000;
 }
 
+			
 .settings-panel {
     position: fixed;
     left: 20px;
@@ -602,6 +620,7 @@ body.dark h3 {
 
 			
 			
+
 
 
 
