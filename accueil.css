@@ -496,7 +496,7 @@ window.addEventListener('DOMContentLoaded', () => {
     position: fixed;
     left: 20px;
     bottom: 30px;
-    background: #22c55e;
+    background: #18d1c2;
     color: #fff;
     width: 45px;
     height: 45px;
@@ -546,6 +546,7 @@ window.addEventListener('DOMContentLoaded', () => {
     border-radius: 50%;
     cursor: pointer;
 }
+
 
 
 
