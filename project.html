@@ -153,44 +153,6 @@
 		    position: relative;
 		}
 
-		.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 30px;
-    max-width: 500px;
-    width: 90%;
-    border-radius: 10px;
-    text-align: center;
-    animation: scaleIn 0.3s ease;
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@keyframes scaleIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-
     </style>
 </head>
 <body>
@@ -300,21 +262,9 @@
         </div>
     </section>
 
-</body>
-<div class="modal" id="projectModal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-
-        <a id="modalLink" href="#" target="_blank" class="btn">
-            Voir le site
-        </a>
-    </div>
-</div>
-	
+</body>	
 </html>
+
 
 
 
