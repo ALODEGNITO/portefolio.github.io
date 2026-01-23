@@ -1,5 +1,4 @@
 // ===== PORTFOLIO - PAGE ACCUEIL =====
-
 window.addEventListener("DOMContentLoaded", () => {
 
     /* ================= HERO ANIMATION ================= */
@@ -31,7 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const bars = document.querySelectorAll(".bar span");
 
     if (skillsSection && bars.length > 0) {
-
         bars.forEach(bar => bar.style.width = "0");
         let animated = false;
 
@@ -64,10 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const sectionTop = section.offsetTop - 120;
             const sectionHeight = section.offsetHeight;
 
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute("id");
             }
         });
@@ -85,8 +80,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const settingsPanel = document.getElementById("settingsPanel");
 
     if (settingsBtn && settingsPanel) {
-
-        // Ouvrir / fermer le panneau
         settingsBtn.addEventListener("click", () => {
             settingsPanel.classList.toggle("active");
         });
@@ -100,19 +93,16 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Charger la couleur sauvegardée
         const savedColor = localStorage.getItem("themeColor");
         if (savedColor) {
             document.documentElement.style.setProperty("--primary", savedColor);
         }
     }
 
-
-        /* ================= DARK MODE ================= */
+    /* ================= DARK MODE ================= */
     const darkBtn = document.getElementById("darkModeToggle");
     const body = document.body;
 
-    // Charger l'état sauvegardé
     const darkModeSaved = localStorage.getItem("darkMode");
 
     if (darkModeSaved === "enabled") {
@@ -134,6 +124,28 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* ================= LANGUAGE SWITCH (FR / EN) ================= */
+    const languageSelect = document.getElementById("languageSelect");
+
+    if (languageSelect) {
+
+        languageSelect.addEventListener("change", () => {
+            const lang = languageSelect.value;
+
+            document.querySelectorAll("[data-fr]").forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            localStorage.setItem("lang", lang);
+        });
+
+        // Charger la langue sauvegardée
+        const savedLang = localStorage.getItem("lang") || "fr";
+        languageSelect.value = savedLang;
+
+        document.querySelectorAll("[data-fr]").forEach(el => {
+            el.textContent = el.getAttribute(`data-${savedLang}`);
+        });
+    }
 
 });
-
