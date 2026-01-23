@@ -700,7 +700,10 @@ body.dark h3 {
     border: 0;
 }
 
-			
+body.dark .map-container {
+    filter: grayscale(100%) invert(90%);
+}			
+
 
 
 
