@@ -704,6 +704,121 @@ body.dark .map-container {
     filter: grayscale(100%) invert(90%);
 }			
 
+/* ================== A PROPOS : EDUCATION & EXPERIENCE ================== */
+
+.timeline-wrapper {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+/* Colonnes */
+.timeline-column {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Titres */
+.timeline-title {
+    text-align: center;
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+/* Ligne verticale */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary);
+}
+
+/* Élément */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Point */
+.timeline-dot {
+    position: absolute;
+    left: -14px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* Carte */
+.timeline-card {
+    background: #f7f9fa;
+    color: #111;
+    padding: 22px;
+    border-radius: 14px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.timeline-card h4 {
+    color: var(--primary);
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.timeline-date {
+    display: inline-block;
+    background: #e9ecef;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.timeline-card ul {
+    padding-left: 18px;
+}
+
+.timeline-card ul li {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+
+/* ===== DARK MODE : TIMELINE ===== */
+
+body.dark .timeline-column {
+    background: #121212;
+}
+
+body.dark .timeline-card {
+    background: #1a1a1a;
+    color: #f1f1f1;
+}
+
+body.dark .timeline-date {
+    background: #000;
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .timeline-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+			
 
 
 
