@@ -157,5 +157,20 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    /* ================= CERTIFICATIONS CAROUSEL ================= */
+    const certifs = document.querySelectorAll(".certif-card");
+    let currentCertif = 0;
+    
+    if (certifs.length > 0) {
+        setInterval(() => {
+            certifs[currentCertif].classList.remove("active");
+            currentCertif = (currentCertif + 1) % certifs.length;
+            certifs[currentCertif].classList.add("active");
+        }, 3500);
+    }
+
+
+
 });
+
 
