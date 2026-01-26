@@ -385,8 +385,14 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .bar span {
+    display: block;
+    height: 100%;
+    width: 0;
     background: var(--primary);
+    border-radius: 20px;
+    transition: width 1.5s ease;
 }
+
 
 /* ================== RESPONSIVE AJUSTEMENTS ================== */
 @media (max-width: 900px) {
@@ -805,6 +811,7 @@ body.dark .timeline-date {
     }
 }
 			
+
 
 
 
