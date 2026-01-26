@@ -514,8 +514,7 @@ window.addEventListener('DOMContentLoaded', () => {
     left: 20px;           /* distance depuis la gauche */
     top: 50%;             /* milieu vertical */
     transform: translateY(-50%); /* ajuste pour que le centre du bouton soit exactement au milieu */
-    /*background: #18d1c2;*/
-	background: var(--primary);
+    background: #18d1c2;
     color: #fff;
     width: 45px;
     height: 45px;
@@ -812,6 +811,7 @@ body.dark .timeline-date {
     }
 }
 			
+
 
 
 
