@@ -302,11 +302,11 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 		
 .project-badge.online {
-		    background-color: #18d1c2;
+    background-color: var(--primary);
 }
 		
 .project-badge.progress {
-		    background-color: #f39c12;
+    background-color: var(--primary);
 }
 		
 /* positionnement */
@@ -385,13 +385,13 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .bar span {
-    display: block;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #1dd6c0, #14b8a6);
-    border-radius: 20px;
-    transition: width 1.5s ease;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        color-mix(in srgb, var(--primary), #000 20%)
+    );
 }
+
 
 
 /* ================== RESPONSIVE AJUSTEMENTS ================== */
@@ -634,9 +634,7 @@ body.dark h3 {
 }
 
 .timeline {
-    position: relative;
-    padding-left: 25px;
-    border-left: 3px solid #18d1c2;
+    border-left: 3px solid var(--primary);
 }
 
 .timeline-item {
@@ -645,13 +643,7 @@ body.dark h3 {
 }
 
 .timeline-dot {
-    position: absolute;
-    left: -12px;
-    top: 10px;
-    width: 16px;
-    height: 16px;
-    background: #18d1c2;
-    border-radius: 50%;
+    background: var(--primary);
 }
 
 .timeline-card {
@@ -819,6 +811,7 @@ body.dark .timeline-date {
     }
 }
 			
+
 
 
 
