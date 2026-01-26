@@ -148,4 +148,14 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ===== ANIMATION DES BARRES DE COMPÉTENCES =====
+    const skillBars = document.querySelectorAll(".bar span");
+    
+    skillBars.forEach(bar => {
+        const width = bar.getAttribute("data-width");
+        bar.style.width = width;
+    });
+
+
 });
+
