@@ -385,14 +385,8 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .bar span {
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        color-mix(in srgb, var(--primary), #000 20%)
-    );
+    background: var(--primary);
 }
-
-
 
 /* ================== RESPONSIVE AJUSTEMENTS ================== */
 @media (max-width: 900px) {
@@ -811,6 +805,7 @@ body.dark .timeline-date {
     }
 }
 			
+
 
 
 
