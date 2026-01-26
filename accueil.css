@@ -511,10 +511,10 @@ window.addEventListener('DOMContentLoaded', () => {
 			
 .settings-btn {
     position: fixed;
-    left: 20px;           /* distance depuis la gauche */
-    top: 50%;             /* milieu vertical */
-    transform: translateY(-50%); /* ajuste pour que le centre du bouton soit exactement au milieu */
-    background: #18d1c2;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);   /* ✅ LIÉ À LA COULEUR */
     color: #fff;
     width: 45px;
     height: 45px;
@@ -525,6 +525,7 @@ window.addEventListener('DOMContentLoaded', () => {
     cursor: pointer;
     font-size: 20px;
     z-index: 2000;
+    transition: background-color 0.3s ease;
 }
 
 			
@@ -811,6 +812,7 @@ body.dark .timeline-date {
     }
 }
 			
+
 
 
 
