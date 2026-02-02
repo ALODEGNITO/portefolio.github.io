@@ -157,8 +157,27 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    // ===== Section certifications =====
+    const searchInput = document.getElementById('certifSearch');
+    const cards = document.querySelectorAll('.certif-card');
+    
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        if(title.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+
+
 
 });
+
 
 
 
