@@ -993,7 +993,8 @@ body.dark .service-card p {
     display: block;
     width: 60px;
     height: 4px;
-    background: #ff5c5c; /* couleur principale */
+   /* background: #ff5c5c;  couleur principale */
+	background: var(--primary);
     margin: 10px auto;
     border-radius: 10px;
 }
@@ -1091,6 +1092,7 @@ body.dark .certif-card p {
     color: #ccc;
 }
 			
+
 
 
 
