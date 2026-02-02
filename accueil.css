@@ -975,7 +975,8 @@ body.dark .service-card p {
 /* ================= CERTIFICATIONS ================= */
 .certifications {
     padding: 80px 0;
-    background: #1e1e1e;
+    /*background: #1e1e1e;*/
+	background: #18d1c2;
     text-align: center;
 }
 
@@ -1091,6 +1092,7 @@ body.dark .certif-card p {
     color: #ccc;
 }
 			
+
 
 
 
