@@ -259,9 +259,10 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .info-item {
-    font-size: 14px;
-    color: #111;
+    font-size: inherit; /* même taille que le texte de la section */
+    color: inherit;     /* même couleur que le texte normal */
 }
+
 
 .info-item strong {
     color: var(--primary);
@@ -886,6 +887,7 @@ body.dark .social-links a {
 }
 			
 			
+
 
 
 
