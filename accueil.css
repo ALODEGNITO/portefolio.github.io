@@ -737,8 +737,29 @@ body.dark h3 {
 
 body.dark .map-container {
     filter: grayscale(100%) invert(90%);
-}			
+}
 
+.citation-contact {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 5px solid #0077ff;
+    font-style: italic;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.citation-contact p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.citation-contact span {
+    font-weight: bold;
+    color: #0077ff;
+}
+		
 /* ================== A PROPOS : EDUCATION & EXPERIENCE ================== */
 
 .timeline-wrapper {
@@ -1092,6 +1113,7 @@ body.dark .certif-card p {
     color: #ccc;
 }
 			
+
 
 
 
