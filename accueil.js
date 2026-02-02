@@ -157,8 +157,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ===== Section certifications =====
-    const searchInput = document.getElementById('certifSearch');
+   const searchInput = document.getElementById('certifSearch');
     const cards = document.querySelectorAll('.certif-card');
     
     searchInput.addEventListener('input', () => {
@@ -177,6 +176,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
 
 
 
