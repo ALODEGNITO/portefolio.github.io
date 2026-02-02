@@ -1077,8 +1077,21 @@ body.dark .service-card p {
     line-height: 1.4;
 }
 
+/* ===== DARK MODE CERTIFICATIONS ===== */
 
+body.dark .certifications {
+    background: #121212;
+}
+
+body.dark .certif-card {
+    background: #1a1a1a;
+}
+
+body.dark .certif-card p {
+    color: #ccc;
+}
 			
+
 
 
 
