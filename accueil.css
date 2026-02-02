@@ -742,8 +742,7 @@ body.dark .map-container {
 .citation-contact {
     margin-top: 30px;
     padding: 20px;
-    /*background: #f9f9f9;*/
-	background: var(--primary);
+    background: #f9f9f9;
     border-left: 5px solid #0077ff;
     font-style: italic;
     text-align: center;
@@ -758,7 +757,8 @@ body.dark .map-container {
 
 .citation-contact span {
     font-weight: bold;
-    color: #0077ff;
+    /*color: #0077ff;*/
+	background: var(--primary);
 }
 		
 /* ================== A PROPOS : EDUCATION & EXPERIENCE ================== */
@@ -1114,6 +1114,7 @@ body.dark .certif-card p {
     color: #ccc;
 }
 			
+
 
 
 
