@@ -973,43 +973,48 @@ body.dark .service-card p {
 
 
 /* ================= CERTIFICATIONS ================= */
-
 .certifications {
     padding: 80px 0;
-    background: #3a3a3a;
+    background: #1e1e1e;
     text-align: center;
 }
 
 .certifications h2 {
-    font-size: 34px;
-    margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 25px;
     color: #fff;
     position: relative;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Soulignement dynamique */
 .certifications h2::after {
     content: "";
     display: block;
-    width: 50px;
+    width: 60px;
     height: 4px;
-    background: var(--primary);
+    background: #ff5c5c; /* couleur principale */
     margin: 10px auto;
     border-radius: 10px;
 }
 
-/* Barre Search */
+/* Barre de recherche */
 #certifSearch {
-    width: 80%;
-    max-width: 900px;
-    padding: 14px 18px;
+    width: 90%;
+    max-width: 500px;
+    padding: 12px 18px;
     border-radius: 12px;
     border: none;
     outline: none;
     margin-bottom: 40px;
     font-size: 15px;
-    background: #222;
+    background: #2a2a2a;
     color: #fff;
+    transition: 0.3s;
+}
+
+#certifSearch:focus {
+    background: #333;
 }
 
 #certifSearch::placeholder {
@@ -1021,7 +1026,7 @@ body.dark .service-card p {
     display: flex;
     gap: 25px;
     overflow-x: auto;
-    padding: 20px;
+    padding: 20px 10px;
     scroll-behavior: smooth;
 }
 
@@ -1037,27 +1042,43 @@ body.dark .service-card p {
     padding: 15px;
     border-radius: 14px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .certif-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
 /* Image */
+.certif-card .certif-img {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
 .certif-card img {
     width: 100%;
-    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certif-card:hover img {
+    transform: scale(1.1);
 }
 
 /* Nom */
 .certif-card p {
     margin-top: 12px;
-    font-weight: bold;
+    font-weight: 600;
     color: #111;
+    font-size: 15px;
+    line-height: 1.4;
 }
+
 			
+
 
 
 
