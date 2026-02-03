@@ -157,17 +157,20 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
-   const searchInput = document.getElementById('certifSearch');
-    const cards = document.querySelectorAll('.certif-card');
+  // ===== Recherche Certifications =====
+    const searchInput = document.getElementById("certifSearch");
+    const cards = document.querySelectorAll(".certif-card");
     
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
+    searchInput.addEventListener("keyup", () => {
+      let value = searchInput.value.toLowerCase();
+    
       cards.forEach(card => {
-        const title = card.dataset.title.toLowerCase();
-        if(title.includes(query)) {
-          card.style.display = 'block';
+        let title = card.dataset.title.toLowerCase();
+    
+        if (title.includes(value)) {
+          card.style.display = "block";
         } else {
-          card.style.display = 'none';
+          card.style.display = "none";
         }
       });
     });
@@ -175,7 +178,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 });
+
 
 
 
