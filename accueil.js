@@ -222,6 +222,62 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+    const form = document.querySelector("form");
+    const result = document.getElementById("result");
+    
+    form.addEventListener("submit", async function(e) {
+    
+        e.preventDefault();
+    
+        const submitButton = form.querySelector("button");
+    
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Envoi en cours...";
+    
+        const formData = new FormData(form);
+    
+        try {
+    
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData
+            });
+    
+            const data = await response.json();
+    
+            if(data.success){
+    
+                result.className = "form-message success";
+    
+                result.innerHTML =
+                "✅ Votre message a été envoyé avec succès.<br>Je vous répondrai dans les plus brefs délais.";
+    
+                form.reset();
+    
+            }else{
+    
+                result.className = "form-message error";
+    
+                result.innerHTML =
+                "❌ Une erreur est survenue. Veuillez réessayer.";
+    
+            }
+    
+        }catch(error){
+    
+            result.className = "form-message error";
+    
+            result.innerHTML =
+            "❌ Impossible d'envoyer le message. Vérifiez votre connexion Internet.";
+    
+        }
+    
+        submitButton.disabled = false;
+        submitButton.innerHTML = "Envoyer";
+    
+    });
+
+
 });
 
 
