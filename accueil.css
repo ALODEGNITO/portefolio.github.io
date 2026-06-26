@@ -45,14 +45,28 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
 
 .logo {
     font-size: 22px;
     font-weight: bold;
     color: var(--text-light);
+
+	flex: 0;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -61,9 +75,9 @@ body {
 
 /* ===== NAVIGATION ===== */
 .nav-list {
-    list-style: none;
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-list a {
