@@ -174,7 +174,6 @@ body {
 }
 
 
-// ===== PORTFOLIO - PAGE ACCUEIL =====
 /* ================== SECTION A PROPOS ================== */
 .about {
     background-color: #f7f9fa;
@@ -541,7 +540,7 @@ body {
 .settings-btn {
     position: fixed;
     left: 20px;
-    top: 50%;
+    top: 80%;
     transform: translateY(-50%);
     background: var(--primary);   /* ✅ LIÉ À LA COULEUR */
     color: #fff;
@@ -982,7 +981,6 @@ body.dark .service-card p {
 
 
 /* ================= CERTIFICATIONS ================= */
-/* ===== SECTION CERTIFICATIONS ===== */
 .certifications {
   padding: 80px 0;
   background: #f9f9f9;
@@ -1078,10 +1076,6 @@ body.dark .certif-card {
 body.dark .certif-card p {
     color: #ccc;
 }
-			
-
-
-
 
 
 /* ===== MENU MOBILE ===== */
