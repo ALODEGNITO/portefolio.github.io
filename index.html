@@ -681,31 +681,86 @@
 				N'hésitez pas à me <span>contacter</span>
 			</h2>
 
-			<form class="contact-form" action="send.php" method="POST">
+			<form action="https://api.web3forms.com/submit" method="POST">
 
+			    <!-- Clé Web3Forms -->
+			    <input type="hidden" name="access_key" value="2222a6c0-1509-447a-8295-46b7e2026b34">
+			
+			    <!-- Sujet de l'e-mail -->
+			    <input type="hidden" name="from_name" value="Portfolio - Tanguy Toles Alodegnito">
+			
+			    <!-- Protection anti-spam -->
+			    <input type="checkbox" name="botcheck" style="display: none;">
+			
 			    <div class="form-row">
+			
 			        <div class="form-group">
-			            <label data-fr="Votre prénom" data-en="Your first name">Votre prénom</label>
-			            <input type="text" name="prenom" placeholder="John" required>
+			            <label data-fr="Votre prénom" data-en="Your first name">
+			                Votre prénom
+			            </label>
+			
+			            <input
+			                type="text"
+			                name="prenom"
+			                placeholder="John"
+			                required>
 			        </div>
 			
 			        <div class="form-group">
-			            <label data-fr="Votre nom" data-en="Your name">Votre nom</label>
-			            <input type="text" name="nom" placeholder="DOE" required>
+			            <label data-fr="Votre nom" data-en="Your last name">
+			                Votre nom
+			            </label>
+			
+			            <input
+			                type="text"
+			                name="nom"
+			                placeholder="DOE"
+			                required>
 			        </div>
+			
 			    </div>
 			
 			    <div class="form-group">
-			        <label data-fr="Votre sujet" data-en="Your topic">Votre sujet</label>
-			        <input type="text" name="sujet" placeholder="Développement d’un site vitrine" required>
+			        <label data-fr="Votre e-mail" data-en="Your email">
+			            Votre e-mail
+			        </label>
+			
+			        <input
+			            type="email"
+			            name="email"
+			            placeholder="exemple@email.com"
+			            required>
 			    </div>
 			
 			    <div class="form-group">
-			        <label data-fr="Votre message" data-en="Your message">Votre message</label>
-			        <textarea name="message" placeholder="Écrivez votre message ici..." required></textarea>
+			        <label data-fr="Votre sujet" data-en="Your subject">
+			            Votre sujet
+			        </label>
+			
+			        <input
+			            type="text"
+			            name="subject"
+			            placeholder="Développement d’un site vitrine"
+			            required>
 			    </div>
 			
-			    <button type="submit" class="btn" data-fr="Envoyer" data-en="Send">
+			    <div class="form-group">
+			        <label data-fr="Votre message" data-en="Your message">
+			            Votre message
+			        </label>
+			
+			        <textarea
+			            name="message"
+			            placeholder="Écrivez votre message ici..."
+			            rows="6"
+			            required></textarea>
+			    </div>
+			
+			    <button
+			        type="submit"
+			        class="btn"
+			        data-fr="Envoyer"
+			        data-en="Send">
 			        Envoyer
 			    </button>
 			
