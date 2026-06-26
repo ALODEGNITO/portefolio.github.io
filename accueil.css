@@ -1117,6 +1117,29 @@ body.dark .certif-card p {
     }
 }
 
+/* ===== MESSAGE DE SUCCES APRES L'ENVOI DE MESSAGE ===== */
+.form-message{
+    margin-top:20px;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    display:none;
+}
+
+.form-message.success{
+    display:block;
+    background:#d1fae5;
+    color:#065f46;
+    border:1px solid #10b981;
+}
+
+.form-message.error{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+    border:1px solid #ef4444;
+}
 
 
 
