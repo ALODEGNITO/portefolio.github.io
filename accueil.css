@@ -540,7 +540,7 @@ body {
 .settings-btn {
     position: fixed;
     left: 20px;
-    top: 80%;
+    top: 50%;
     transform: translateY(-50%);
     background: var(--primary);   /* ✅ LIÉ À LA COULEUR */
     color: #fff;
@@ -560,7 +560,7 @@ body {
 .settings-panel {
     position: fixed;
     left: 20px;
-    bottom: 50px;
+    bottom: 90px;
     background: #fff;
     padding: 15px;
     border-radius: 12px;
