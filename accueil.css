@@ -560,7 +560,7 @@ body {
 .settings-panel {
     position: fixed;
     left: 20px;
-    bottom: 80px;
+    bottom: 50px;
     background: #fff;
     padding: 15px;
     border-radius: 12px;
