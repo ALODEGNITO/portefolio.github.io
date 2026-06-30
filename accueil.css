@@ -540,7 +540,7 @@ body {
 .settings-btn {
     position: fixed;
     left: 20px;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     background: var(--primary);   /* ✅ LIÉ À LA COULEUR */
     color: #fff;
