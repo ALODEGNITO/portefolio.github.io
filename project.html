@@ -1,456 +1,939 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de ALODEGNITO Tolès Tanguy | Mes Projects</title>
-	<!--<link rel="icon" type="image/png" href="profil.png">-->
-	<link rel="shortcut icon" href="images/favicon1.ico">
+
+    <title>Mes réalisations | Portfolio de Tanguy ALODEGNITO</title>
+
+    <link rel="shortcut icon" href="images/favicon1.ico">
+
     <style>
         :root {
-            --primary: #18d1c2; /* Couleur principale */
-            --secondary: #f7f9fa;
-            --btn-color: #18d1c2;
-            --btn-text: #fff;
+            --primary: #18bdb0;
+            --primary-dark: #109b91;
+            --dark: #172b3a;
+            --text: #526170;
+            --light: #f5f8fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
         a {
             text-decoration: none;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* ================= HEADER ================= */
+
+        .top-bar {
+            background: var(--white);
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #edf0f2;
         }
 
-        h2 {
-            font-size: 2.5rem;
+        .logo {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--dark);
         }
 
-        /* ================== SECTION PROJETS ================== */
-        .projects {
-            padding: 80px 0;
-            background-color: #f0f2f5;
-        }
-
-        .projects h2 {
-            text-align: center;
+        .logo span {
             color: var(--primary);
-            margin-bottom: 50px;
         }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--dark);
+            color: white;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* ================= INTRODUCTION ================= */
+
+        .projects {
+            padding: 75px 6% 90px;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 55px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary-dark);
+            background: rgba(24, 189, 176, .10);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .section-header h1 {
+            font-size: clamp(32px, 5vw, 45px);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-header h1 span {
+            color: var(--primary);
+        }
+
+        .section-header p {
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .section-line {
+            width: 65px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 10px;
+            margin: 22px auto 0;
+        }
+
+        /* ================= PROJECT GRID ================= */
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
         }
 
+        /* ================= PROJECT CARD ================= */
+
         .project-card {
-            background-color: var(--secondary);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e9eef1;
+            transition: transform .35s ease, box-shadow .35s ease;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(20, 43, 58, .10);
         }
 
-        .project-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
+        /* IMAGE */
 
-        .project-card p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .project-card span {
-            display: block;
-            margin: 15px 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--btn-color);
-            color: var(--btn-text);
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #5751d9;
-        }
-
-        /* ===== PROJECT IMAGE ===== */
         .project-image {
-            width: 100%;
-            height: 180px;
+            position: relative;
+            height: 220px;
             overflow: hidden;
-            border-radius: 10px 10px 0 0;
+            background: #e9f0f2;
         }
-        
+
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        /* Effet zoom au hover */
-        .project-card:hover .project-image img {
-            transform: scale(1.08);
-        }
-        
-        /* Contenu */
-        .project-content {
-            padding: 20px;
+            display: block;
+            transition: transform .6s ease;
         }
 
-		
-        /* Responsive */
-        @media (max-width: 768px) {
-            .projects h2 {
-                font-size: 2rem;
+        .project-card:hover .project-image img {
+            transform: scale(1.07);
+        }
+
+        /* BADGES */
+
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 7px 13px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(8px);
+        }
+
+        .project-badge.online {
+            background: rgba(16, 155, 112, .95);
+        }
+
+        .project-badge.progress {
+            background: rgba(231, 153, 34, .95);
+        }
+
+        .project-badge.offline {
+            background: rgba(90, 100, 115, .95);
+        }
+
+        .project-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* PROJECT CONTENT */
+
+        .project-content {
+            padding: 23px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-category {
+            color: var(--primary-dark);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 9px;
+        }
+
+        .project-content h3 {
+            color: var(--dark);
+            font-size: 18px;
+            line-height: 1.45;
+            margin-bottom: 12px;
+            font-weight: 750;
+        }
+
+        .project-content p {
+            color: var(--text);
+            font-size: 13.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        /* TECHNOLOGIES */
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 22px;
+        }
+
+        .project-tags span {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: #edf7f7;
+            color: #178e86;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* BUTTON */
+
+        .project-footer {
+            padding-top: 17px;
+            border-top: 1px solid #edf0f2;
+        }
+
+        .project-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+            font-size: 13px;
+            font-weight: 750;
+            transition: .3s;
+        }
+
+        .project-link span:last-child {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(24, 189, 176, .12);
+            transition: .3s;
+        }
+
+        .project-link:hover {
+            color: var(--dark);
+        }
+
+        .project-link:hover span:last-child {
+            background: var(--primary);
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .project-link.disabled {
+            color: #89949c;
+            cursor: default;
+        }
+
+        .project-link.disabled span:last-child {
+            background: #f0f2f4;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            background: var(--dark);
+            color: #d4dfe5;
+            padding: 25px 6%;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1050px) {
+            .projects-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-		.project-badge {
-		    position: absolute;
-		    top: 12px;
-		    left: 12px;
-		    padding: 6px 12px;
-		    font-size: 12px;
-		    font-weight: bold;
-		    color: #fff;
-		    border-radius: 20px;
-		}
-		
-		.project-badge.online {
-		    background-color: #18d1c2;
-		}
-		
-		.project-badge.progress {
-		    background-color: #f39c12;
-		}
-		
-		/* positionnement */
-		.project-image {
-		    position: relative;
-		}
+        @media (max-width: 650px) {
+
+            .top-bar {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            .back-btn {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .projects {
+                padding: 50px 5% 65px;
+            }
+
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-header p {
+                font-size: 14px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .project-image {
+                height: 210px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-content h3 {
+                font-size: 17px;
+            }
+        }
+
+        /* ANIMATION */
+
+        @media (prefers-reduced-motion: no-preference) {
+            .project-card {
+                animation: fadeIn .7s ease both;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
 
     </style>
 </head>
+
 <body>
-<button onclick="window.location.href='index.html'" class="btn btn-small">⬅ Retour à l'accueil</button>		
-    <!-- ===== SECTION PROJETS ===== -->
+
+    <!-- HEADER -->
+
+    <header class="top-bar">
+
+        <a href="index.html" class="logo">
+            TANGUY <span>ALODEGNITO</span>
+        </a>
+
+        <a href="index.html" class="back-btn">
+            ← Retour à l'accueil
+        </a>
+
+    </header>
+
+
+    <!-- SECTION PROJETS -->
+
     <section class="projects" id="projets">
+
         <div class="container">
-            <h2>Mes Projets</h2>
 
-            <div class="projects-container">
+            <!-- INTRODUCTION -->
 
-               <div class="project-card">
+            <div class="section-header">
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet1.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Projet pour la gestion des frets</h3>
-				        <p>Projet pour la gestion des frets de la Chine vers le Bénin</p>
-				        <span>#html #css #js</span>
-				        <a href="https://legendcargo413.com/" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
+                <span class="section-label">MON PORTFOLIO</span>
 
-				<div class="project-card">
+                <h1>Mes <span>réalisations</span></h1>
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet2.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Projet pour la numerisation des demandes de messe en ligne</h3>
-				        <p>Projet pour la demande des messes en ligne de PSJG</p>
-				        <span>#html #css #js</span>
-				        <a href="https://mediumpurple-baboon-193167.hostingersite.com/" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
+                <p>
+                    Découvrez une sélection de mes projets réalisés dans les domaines
+                    du développement web, des applications mobiles et de la conception
+                    de solutions numériques. Chaque réalisation reflète mon engagement
+                    à créer des outils modernes, performants et adaptés aux besoins.
+                </p>
 
-				<div class="project-card">
-
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet3.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Projet de gestion des colis</h3>
-				        <p>Projet pour la gestion des colis de Lomé à Cotonou</p>
-				        <span>#html #css #js</span>
-				        <a href="https://gestiondescolis.42web.io/" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
-
-				<div class="project-card">
-
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet4.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Projet de site web de Rotary Club Abomey-Calavi</h3>
-				        <p>Projet de site web de Rotary Club Abomey-Calavi Bénin </p>
-				        <span>#html #css #js</span>
-				        <a href="https://rotaryclubabomeycalavi.org/" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
-
-				<div class="project-card">
-
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet5.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En cours</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Application web de gestion de parcours des releveurs</h3>
-				        <p>
-						Elle permet de visualiser en temps réel les déplacements, 
-						les performances et les statistiques de chaque releveur à
-						travers une interface intuitive et interactive.
-						</p>
-				        <span>#html #css #js</span>
-				        <a href="#" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
-
-				<div class="project-card">
-
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/Projet7.jpg" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Site web de réservation de tables et de commande de nourriture</h3>
-				        <p>
-							Ce site web permet aux clients de réserver facilement une table en ligne
-							et de commander des plats à l’avance. Il offre une interface simple et
-							intuitive pour consulter le menu, choisir un horaire de réservation et passer 
-							une commande en quelques clics. Cette solution aide les restaurants à mieux gérer
-							leurs réservations et à améliorer l’expérience client
-						</p>
-				        <span>#html #css #js</span>
-				        <a href="https://www.sushi-koyo.fr/" class="btn btn-small">Voir ce projet</a>
-				    </div>
-				
-				</div>
-
-
-				<div class="project-card">
-
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/Projet8.png" alt="Projet gestion des frets">
-						<span class="project-badge online" style="color: white;">Hors ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Site web de gestion de fin d’intervention des techniciens de pose des compteurs</h3>
-				        <p>
-							Plateforme permettant de centraliser et de suivre les interventions réalisées par
-							les techniciens sur le terrain. Elle offre la possibilité d’enregistrer les comptes
-							rendus de fin d’intervention, de renseigner les informations liées aux compteurs installés,
-							de suivre l’état d’avancement des travaux et de générer des statistiques. Cet outil facilite le contrôle,
-							la traçabilité et l’optimisation des opérations.
-						</p>
-				        <span>#html #css #js</span>
-				        <a href="#" class="btn btn-small">Voir ce projet</a>
-				    </div>
+                <div class="section-line"></div>
 
             </div>
 
-			<div class="project-card">
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/connexion.jpg" alt="Projet gestion des fins d'intervention">
-						<span class="project-badge online" style="color: white;">Hors ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Application mobile de gestion de coupure des compteurs d’eau de la SONEB</h3>
-				        <p>
-							Application destinée aux agents de terrain permettant de planifier, exécuter
-							et suivre les opérations de coupure des compteurs d’eau. Elle facilite la 
-							saisie des informations sur les interventions, la localisation des abonnés, 
-							la mise à jour des statuts et la transmission en temps réel des données au 
-							système central. Cet outil améliore l’efficacité des opérations, 
-							la traçabilité et le contrôle des interventions.
-						</p>
-				        <span>#html #css #ts</span>
-				        <a href="#" class="btn btn-small">Voir ce projet</a>
-				    </div>
+            <!-- GRILLE DES PROJETS -->
 
-            </div>	
+            <div class="projects-container">
 
-			<div class="project-card">
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/connexion-stock.jpg" alt="Projet gestion des fins d'intervention">
-						<span class="project-badge online" style="color: white;">Hors ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Application mobile de gestion de stock</h3>
-				        <p>
-							Application permettant de suivre et de gérer efficacement les entrées,
-							sorties et niveaux de stock en temps réel. Elle offre des fonctionnalités
-							telles que l’enregistrement des mouvements de stock, la consultation des 
-							disponibilités, la gestion des inventaires et la génération de rapports.
-							Cet outil facilite l’optimisation des ressources, réduit les erreurs et
-							améliore la traçabilité des produits.
-						</p>
-				        <span>#html #css #ts</span>
-				        <a href="#" class="btn btn-small">Voir ce projet</a>
-				    </div>
+                <!-- PROJET 1 -->
 
-            </div>		
+                <article class="project-card">
 
-			<div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projet1.jpg" alt="Gestion des frets Legend Cargo 413" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/projet10.png" alt="Projet gestion des fins d'intervention">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Site web d’information du Groupe Cauris Informatique</h3>
-				        <p>
-							Plateforme en ligne dédiée à la présentation du Groupe Cauris Informatique,
-							mettant en avant ses services, ses solutions technologiques, ses réalisations
-							et ses actualités. Le site permet aux visiteurs de mieux connaître l’entreprise,
-							ses domaines d’expertise et de faciliter la prise de contact avec ses équipes.
-						</p>
-				        <span>#html #css #ts</span>
-				        <a href="https://gcauris.com/index.html" class="btn btn-small">Voir ce projet</a>
-				    </div>
+                    <div class="project-content">
 
-            </div>		
+                        <span class="project-category">Développement web</span>
 
-			<div class="project-card">
+                        <h3>Plateforme de gestion des frets</h3>
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/image11.png" alt="Projet gestion des fins d'intervention">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Application web de prise de rendez-vous en ligne – Cabinet Médical d'Ophtalmologie Maison d'Italie</h3>
-				        <p>
-							Conception et développement d'une application web permettant aux patients de prendre facilement
-							rendez-vous en ligne pour leurs consultations ophtalmologiques. La plateforme simplifie la gestion
-							des rendez-vous, facilite l'accès aux services du cabinet et améliore l'expérience des patients grâce
-							à une interface moderne, intuitive et responsive.
-						</p>
-				        <span>#html #css #ts</span>
-				        <a href="https://gcauris.com/liste-rendez-vous.html" class="btn btn-small">Voir ce projet</a>
-				    </div>
+                        <p>
+                            Développement d'une plateforme dédiée à la gestion des
+                            opérations de fret entre la Chine et le Bénin, facilitant
+                            le suivi et la gestion des expéditions.
+                        </p>
 
-            </div>			
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
 
-			<div class="project-card">
+                        <div class="project-footer">
+                            <a href="https://legendcargo413.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
 
-				    <!-- Image du projet -->
-				    <div class="project-image">
-				        <img src="images/image12.png" alt="Projet gestion des fins d'intervention">
-						<span class="project-badge online" style="color: white;">En ligne</span>
-				    </div>
-				
-				    <!-- Contenu du projet -->
-				    <div class="project-content">
-				        <h3>Plateforme web de géolocalisation des compteurs installés</h3>
-				        <p>
-							Conception et développement d'une plateforme web permettant de visualiser et de localiser
-							géographiquement les compteurs installés sur une carte interactive. La solution facilite
-							le suivi des installations, l'identification des compteurs et la gestion des données géographiques 
-							afin d'améliorer le contrôle et le suivi du parc de compteurs.
-						</p>
-				        <span>#html #css #ts</span>
-				        <a href="https://gcauris.com/carte-suivi-compteur.html" class="btn btn-small">Voir ce projet</a>
-				    </div>
+                    </div>
+                </article>
 
-            </div>				
-	
+
+                <!-- PROJET 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/projet2.jpg" alt="Plateforme de demande de messes en ligne" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Développement web</span>
+
+                        <h3>Plateforme de demande de messes en ligne</h3>
+
+                        <p>
+                            Conception d'une solution numérique permettant aux fidèles
+                            d'effectuer leurs demandes de messes en ligne de manière
+                            simple et rapide pour PSJG.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://mediumpurple-baboon-193167.hostingersite.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/projet3.jpg" alt="Gestion des colis" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Développement web</span>
+
+                        <h3>Plateforme de gestion des colis</h3>
+
+                        <p>
+                            Application web dédiée à la gestion et au suivi des colis
+                            transportés entre Lomé et Cotonou, permettant de mieux
+                            organiser les opérations et les expéditions.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://gestiondescolis.42web.io/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 4 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/projet4.jpg" alt="Site web Rotary Club Abomey-Calavi" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Site institutionnel</span>
+
+                        <h3>Site web du Rotary Club Abomey-Calavi</h3>
+
+                        <p>
+                            Réalisation d'un site web institutionnel présentant
+                            les activités, les actions sociales, les événements
+                            et les initiatives du Rotary Club Abomey-Calavi au Bénin.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://rotaryclubabomeycalavi.org/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 5 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/projet5.jpg" alt="Gestion des parcours des releveurs" loading="lazy">
+                        <span class="project-badge progress">En cours</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Application métier</span>
+
+                        <h3>Gestion des parcours des releveurs</h3>
+
+                        <p>
+                            Application web permettant de visualiser les déplacements,
+                            les performances et les statistiques de chaque releveur
+                            grâce à une interface interactive et intuitive.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="#" class="project-link disabled">
+                                <span>Projet non accessible</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 6 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/Projet7.jpg" alt="Site de réservation et commande de nourriture" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Restauration</span>
+
+                        <h3>Site de réservation et commande de nourriture</h3>
+
+                        <p>
+                            Plateforme permettant aux clients de consulter le menu,
+                            réserver une table et commander des plats à l'avance.
+                            Une solution pensée pour simplifier la gestion du restaurant
+                            et améliorer l'expérience client.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://www.sushi-koyo.fr/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 7 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/Projet8.png" alt="Gestion des interventions des techniciens" loading="lazy">
+                        <span class="project-badge offline">Hors ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Application métier</span>
+
+                        <h3>Gestion des fins d'intervention des techniciens</h3>
+
+                        <p>
+                            Plateforme de centralisation et de suivi des interventions
+                            réalisées sur le terrain. Elle permet d'enregistrer les
+                            comptes rendus, les informations des compteurs installés,
+                            de suivre les travaux et de produire des statistiques.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="#" class="project-link disabled">
+                                <span>Projet non accessible</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 8 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/connexion.jpg" alt="Application mobile de gestion des coupures de compteurs" loading="lazy">
+                        <span class="project-badge offline">Hors ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Application mobile</span>
+
+                        <h3>Gestion des coupures des compteurs d'eau – SONEB</h3>
+
+                        <p>
+                            Application mobile destinée aux agents de terrain pour
+                            planifier, exécuter et suivre les opérations de coupure.
+                            Elle facilite la localisation des abonnés, la saisie des
+                            interventions et la transmission des données au système central.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Ionic</span>
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="#" class="project-link disabled">
+                                <span>Projet non accessible</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 9 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/connexion-stock.jpg" alt="Application mobile de gestion de stock" loading="lazy">
+                        <span class="project-badge offline">Hors ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Application mobile</span>
+
+                        <h3>Application mobile de gestion de stock</h3>
+
+                        <p>
+                            Solution mobile permettant de gérer les entrées, les sorties,
+                            les inventaires et les niveaux de stock. Elle facilite
+                            le suivi des mouvements, la consultation des disponibilités
+                            et la production de rapports.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Ionic</span>
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="#" class="project-link disabled">
+                                <span>Projet non accessible</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 10 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/projet10.png" alt="Site web Groupe Cauris Informatique" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Site institutionnel</span>
+
+                        <h3>Site web du Groupe Cauris Informatique</h3>
+
+                        <p>
+                            Conception d'une plateforme institutionnelle présentant
+                            les services, les solutions technologiques, les réalisations
+                            et les actualités du Groupe Cauris Informatique.
+                            Elle facilite également la prise de contact avec l'entreprise.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://gcauris.com/index.html" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 11 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/image11.png" alt="Prise de rendez-vous Cabinet Médical Maison d'Italie" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Santé / Application web</span>
+
+                        <h3>Prise de rendez-vous en ligne – Maison d'Italie</h3>
+
+                        <p>
+                            Application web permettant aux patients de prendre
+                            facilement rendez-vous pour leurs consultations
+                            ophtalmologiques. Elle simplifie la gestion des rendez-vous
+                            et améliore l'expérience des patients grâce à une interface
+                            moderne et responsive.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://gcauris.com/liste-rendez-vous.html" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJET 12 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/image12.png" alt="Géolocalisation des compteurs installés" loading="lazy">
+                        <span class="project-badge online">En ligne</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">Cartographie / Géolocalisation</span>
+
+                        <h3>Plateforme de géolocalisation des compteurs installés</h3>
+
+                        <p>
+                            Conception d'une plateforme web permettant de visualiser
+                            et de localiser les compteurs installés sur une carte
+                            interactive. Elle facilite le suivi des installations,
+                            l'identification des compteurs et la gestion des données
+                            géographiques.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                            <span>Leaflet</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <a href="https://gcauris.com/carte-suivi-compteur.html" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>Découvrir le projet</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+
+            </div>
         </div>
+
     </section>
 
-</body>	
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        © 2026 <span>ALODEGNITO Tolès Tanguy</span> — Tous droits réservés.
+    </footer>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
